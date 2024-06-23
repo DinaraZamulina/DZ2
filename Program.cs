@@ -211,3 +211,89 @@
 //         return string.Join(" ", words);
 //     }
 // }
+//-------------------------------------------------------------------------------
+
+// Задайте значения M и N. Напишите программу, которая выведет все натуральные числа 
+// в промежутке от M до N. Использовать рекурсию, не использовать циклы.
+
+// string PrintNaturalNumbers(int m, int n)
+// {
+//     if (m == n) return Convert.ToString(n);
+//     return m + " " + PrintNaturalNumbers(m + 1, n);
+// }
+
+// void PrintNaturalNumbers2(int start, int end)
+//     {
+//         if (start > end) return;
+//         Console.Write(start + " ", end);
+//         PrintNaturalNumbers2(start + 1, end);
+//     }
+
+// Console.WriteLine("Введите число M ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите число N ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine($"Натуральные числа от {m} до {n}:");
+// Console.WriteLine(PrintNaturalNumbers(m, n));
+// PrintNaturalNumbers2(m, n);
+
+//-------------------------------------------------------------------------------
+
+﻿// Напишите программу вычисления функции Аккермана с помощью рекурсии. 
+// Даны два неотрицательных числа m и n.
+
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
+
+// A(m, n)
+// n + 1, при m = 0;
+// A(m - 1, 1), при m > 0, n = 0;
+// A(m - 1, A(m, n - 1)), при m > 0, n > 0;
+
+// int AkkermanFunction (int m, int n)
+// {
+//     if(m == 0)
+//     {
+//         return n + 1;
+//     }
+//     else if (m > 0 && n == 0) 
+//     {
+//         return AkkermanFunction(m - 1, 1);
+//     }
+//     else 
+//     {
+//         return AkkermanFunction(m - 1, AkkermanFunction(m, n - 1));
+//     }
+// }
+
+// Console.WriteLine("Введите число M");
+// int m = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите число N");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine($"A({m}, {n}) = {AkkermanFunction(m, n)}");
+
+// int AkkermanFunction(int m, int n)
+// {
+//     if (m == 0) return n + 1;
+//     if (m > 0 && n == 0) return AkkermanFunction(m - 1, 1);
+//     if (m > 0 && n > 0) return AkkermanFunction(m - 1, AkkermanFunction(m, n - 1));
+//     return AkkermanFunction(m, n);
+// }
+
+//-------------------------------------------------------------------------------
+
+﻿// Задайте произвольный массив. Выведете его элементы, начиная с конца. 
+// Использовать рекурсию, не использовать циклы.
+
+// void Reverse (int[] array, int i)
+// {
+//     if(i < 0) return;
+//     Console.Write(array[i] + " ");
+//     Reverse(array, i - 1);
+// }
+
+// int[] array = {34, 5, 67, 32, 0};
+// Reverse(array, array.Length - 1);
